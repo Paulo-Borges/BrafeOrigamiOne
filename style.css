@@ -1,0 +1,573 @@
+/*  reset  */
+:root {
+    --bg-primary: #252525;
+    --bg-secundary: #e7e4d8;
+    --text-primary: #fff;
+    --borda-primary: #d6d3c8;
+    --bol-paulista: #492901;
+    --bol-carioca: #c17139;
+    --bol-mineiro: #d7a54d;
+    }
+
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, serif;
+    color: var(--bg-primary);
+}
+* {
+    
+    box-sizing: border-box;
+}
+
+/*  menu  */
+
+.menu {
+    background: var(--bg-primary);
+    padding: 20px 0;
+}
+
+.menu-container {
+    max-width: 960px;
+    margin: 0 auto;         /* assim é pra centralizar */
+}
+
+.menu-container::before, .menu-container::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+a.menu-logo {
+    display: block;          /*  pra ficar de ponta a ponta na linha */
+    float: left;
+    margin-left: 5px;
+}
+
+.menu-nav {
+    float: right;
+    margin-right: 40px;
+    margin-top: -40px;
+
+}
+
+.menu-nav li {
+    display: inline-block;
+}
+
+.menu-nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 1.125em;
+}
+
+/* para responsividade e bom fazer tudo em % */
+
+/*
+BreakPoints
+960
+740
+*/
+@media (max-width:739px) {
+    .menu {
+        text-align: center;
+    }
+   
+    .manu nav {
+        float: none;
+        clear: both;
+    }
+}
+
+/*  Intro  */
+
+.intro {
+    background: url("img/bg-intro.jpg") no-repeat center center;
+    background-size: cover;       /* assim ele vai esta cobrindo 100% */
+    padding: 150px 0;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.intro h1 {
+    text-transform: uppercase;      /* pra letras ficarem maiuscula*/
+    font-size: 3em;
+}
+
+.intro h1::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 4px;
+    background: var(--text-primary);
+    margin: 10px auto ;
+}
+
+.intro p {
+    font-style: italic;
+    font-size: 1.125ems;
+}
+
+/* para responsividade e bom fazer tudo em % */
+
+/*
+BreakPoints
+960
+740
+
+*/
+@media (max-width:739px) {
+    .intro {
+        padding: 60px 0;
+    }
+}
+/* Sobre */
+
+.sobre {
+    padding: 60px 0;
+}
+
+.sobre-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.sobre-container::after, .sobre-container::before {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.sobre h2 {
+    text-align: center;
+    font-size: 2,25em;
+    margin-bottom: 60px;
+}
+
+.sobre-item {
+    width: 460px;
+    float: left;
+    margin: 0 10px;
+}
+
+.sobre-item img {
+    display: block;
+    max-width: 100%;
+}
+
+.sobre-item h3 {
+    font-size: 2.25em;
+    background: var(--bg-primary);
+    width: 220px;
+    color: var(--text-primary);
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px 0 10px 0;
+    top: -25px;
+    position: relative;
+}
+
+.sobre > p {
+    font-size: 1.125em;
+    line-height: 1.4em;
+    font-style: italic;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 460px;
+}
+
+/* para responsividade e bom fazer tudo em % */
+
+/*
+BreakPoints
+960
+740
+
+*/
+@media (min-width: 740px) and (max-width:980px) {
+    .sobre-container {
+        max-width: 720px;
+    }
+    .sobre-item {
+        width: 340px;
+    }
+}
+
+@media (max-width: 739px) {
+    .sobre-container {
+        max-width: 360;
+    }
+    .sobre-item {
+        width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Produtos */
+
+.produtos {
+    background: var(--bg-secundary);
+    padding: 60px 0;
+    border-top: 3px solid var(--borda-primary);
+    border-bottom: 3px solid var(--borda-primary);
+}
+
+.produtos-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.produtos-container::before, .produtos-container::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.produtos-item {
+    width: 300px;
+    float: left;
+    margin: 0 10px 20px 10px;
+}
+
+.produtos-item h2 {
+    text-align: center;
+    font-size: 2.24em;
+    margin-bottom: 20px;
+}
+
+.produtos-item h2::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: currentColor;
+    border-radius: 50px;
+    margin: 20px auto;
+    border: 5px solid var(--bg-secundary);
+    box-shadow: 0 0 0 10px currentColor;
+}
+
+h2.produtos-paulista::before {
+    color: var(--bol-paulista);
+}
+
+h2.produtos-carioca::before {
+    color: var(--bol-carioca);
+}
+
+h2.produtos-mineiro::before {
+    color: var(--bol-mineiro);
+}
+
+.produtos-item p {
+    font-size: 0.875em;
+    line-height: 1.4em;
+
+}
+
+.produtos-btn {
+    width: 100px;
+    border: 3px solid;
+    color: var(--bg-primary);
+    text-decoration: none;
+    display: block;
+    font-size: 1.125em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px 0;
+    margin: 20px auto 0 auto;
+}
+
+/* para responsividade e bom fazer tudo em % */
+
+/*
+BreakPoints
+960
+740
+
+*/
+@media (min-width: 740px) and (max-width:980px) {
+    .produtos-container {
+        max-width: 720px;
+    }
+    .produtos-item {
+        width: 220px;
+    }
+}
+
+@media (max-width: 739px) {
+    .produtos-container {
+        max-width: 300;
+    }
+    .produtos-item {
+        margin: 0 auto 20px auto;
+    }
+}
+
+ 
+/* Locais  */
+
+.locais {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 0;
+    
+}
+
+.locais-item {
+    clear: both;     /* para o float, so vai pro lado o que estiver junto  */
+    
+}
+
+.locais-item::after, .locais-item::before {
+    display: table;
+    content: '';
+    clear: both;
+    
+}
+
+.locais-item img {
+    width: 460px;
+    display: block;
+    float: right;
+    margin: 10px 10px;
+
+}
+
+.locais-item > div {
+    width: 460px;
+    float: left;
+    margin: 0 10px;
+}
+
+.locais-item h2 {
+    font-size: 2.25em;
+    margin-bottom: 20px;
+}
+
+.locais-item p {
+    font-size: 1.125em;
+    line-height: 1.4em;
+    max-width: 320px;
+    margin-bottom: 40px;
+}
+
+.locais-item a {
+    font-size: 1.125em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid;
+    color: var(--bg-primary);
+    padding: 10px 20px;
+}
+
+/* para responsividade e bom fazer tudo em % */
+
+/*
+BreakPoints
+960
+740
+
+*/
+@media (min-width: 740px) and (max-width:980px) {
+    .locais {
+        max-width: 720px;
+    }
+    .locais-item > div, .locasi-item img {
+        width: 340px;
+    }
+}
+
+@media (max-width: 739px) {
+    .locais-item img, .locais-item > div {
+        width: 300px;
+        margin: 0px;
+    }
+    .locais {
+        max-width: 300px;
+    }
+
+}
+/*  Assine  */
+
+.assine {
+    background: var(--bg-secundary);
+    padding: 30px 0;
+}
+
+.assine-container {
+    max-width: 960px;
+    margin: 0 auto ;
+}
+
+.assine-container::after, .assine-container::before {
+    content: '';
+    display: table;
+    clear: both;
+
+}
+.assine-info {
+    width: 460px;
+    margin: 0 10px;
+    float: left;
+}
+
+.assine-info h2 {
+    font-size: 2.25em;
+}
+
+.assine-info p {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.assine form {
+    width: 460px;
+    margin: 0 10px;
+    float: left;
+}
+
+.assine form label {
+    display: none;
+}
+
+.assine input {
+    width: 320px;
+    border: 3px solid var(--bg-primary);
+    background: none;
+    font-size: 1.5em;
+    font-style: italic;
+    font-family: georgia, serif;
+    padding: 10px;
+    float: left;
+}
+
+.assine button {
+    background: var(--bg-primary);
+    border: none;
+    font-family: georgia, serif;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    width: 140px;
+    padding: 13px 0;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+/* para responsividade e bom fazer tudo em % */
+
+/*
+BreakPoints
+960
+740
+
+*/
+@media (min-width: 740px) and (max-width:980px) {
+    .assine-container {
+        max-width: 720px;
+    }
+    .assine-info {
+        width: 340px;
+    }
+    .assine form {
+        width: 340px;
+    }
+    .assine input {
+        width: 340px;
+    }
+}
+
+@media (max-width: 739px) {
+    .assine-container {
+        max-width: 300px;
+    }
+    .assine-info {
+        width: 300px;
+        margin: 0;
+    }
+    .assine form {
+        width: 300px;
+        margin: 0;
+    }
+    .assine input {
+        width: 300px;
+        margin: 10px 0 0 0;
+    }
+
+}
+/* Footer */
+
+.footer {
+    background: var(--borda-primary);
+    padding: 40px 0;
+}
+
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-container::after, .footer-container::before {
+    display: table;
+    content: '';
+    clear: both;
+}
+.footer-container p {
+    float: left;
+    margin: 0 10px;
+    font-size: 1.125em;
+    line-height: 1.4em;
+}
+
+.footer-container a {
+    text-decoration: none;
+    color: var(--bg-primary);
+    transition: 1.0s;
+}
+
+.footer-container a:hover {
+    color: var(--bol-carioca);
+
+}
+
+.footer img {
+    float: right;
+    margin: 0 10px;
+    display: block;
+}
+
+/* para responsividade e bom fazer tudo em % */
+
+/*
+BreakPoints
+960
+740
+
+*/
+@media (min-width: 740px) and (max-width:980px) {
+    
+
+
+}
+
+@media (max-width: 739px) {
+   .footer-container {
+    max-width: 300px;
+   }
+   .footer p {
+    float: none;
+    margin: opx;
+   }
+   .footer img {
+    float:none;
+    margin: 20px 0;
+   }
+
+
+}
